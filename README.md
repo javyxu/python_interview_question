@@ -8,6 +8,7 @@
         - [输入日期， 判断这一天是这一年的第几天？](#输入日期-判断这一天是这一年的第几天)
         - [打乱一个排好序的list对象alist？](#打乱一个排好序的list对象alist)
     - [数据类型](#数据类型)
+        - [python常见的列表推导式？](#python常见的列表推导式)
         - [现有字典 d= {'a':24,'g':52,'i':12,'k':33}请按value值进行排序?](#现有字典-d-a24g52i12k33请按value值进行排序)
         - [字典推导式](#字典推导式)
         - [请反转字符串 "aStr"?](#请反转字符串-astr)
@@ -33,7 +34,7 @@
         - [Python中变量的作用域？（变量查找顺序)](#python中变量的作用域变量查找顺序)
         - [字符串 `"123"` 转换成 `123`，不使用内置api，例如 `int()`](#字符串-123-转换成-123不使用内置api例如-int)
         - [给定一个整数数组和一个目标值，找出数组中和为目标值的两个数](#给定一个整数数组和一个目标值找出数组中和为目标值的两个数)
-        - [给列表中的字典排序：假设有如下list对象，alist=[{"name":"a","age":20},{"name":"b","age":30},{"name":"c","age":25}],将alist中的元素按照age从大到小排序 alist=[{"name":"a","age":20},{"name":"b","age":30},{"name":"c","age":25}]](#给列表中的字典排序假设有如下list对象alistnameaage20namebage30namecage25将alist中的元素按照age从大到小排序-alistnameaage20namebage30namecage25)
+        - [给列表中的字典排序](#给列表中的字典排序)
         - [统计一个文本中单词频次最高的10个单词？](#统计一个文本中单词频次最高的10个单词)
         - [请写出一个函数满足以下条件](#请写出一个函数满足以下条件)
         - [使用单一的列表生成式来产生一个新的列表](#使用单一的列表生成式来产生一个新的列表)
@@ -50,53 +51,42 @@
         - [Python中类方法、类实例方法、静态方法有何区别？](#python中类方法类实例方法静态方法有何区别)
         - [遍历一个object的所有属性，并print每一个属性名？](#遍历一个object的所有属性并print每一个属性名)
         - [写一个类，并让它尽可能多的支持操作符?](#写一个类并让它尽可能多的支持操作符)
-        - [介绍Cython，Pypy Cpython Numba各有什么缺点](#介绍cythonpypy-cpython-numba各有什么缺点)
+        - [介绍Cython、Pypy、CPython、Numba各有什么缺点](#介绍cythonpypycpythonnumba各有什么缺点)
         - [请描述抽象类和接口类的区别和联系](#请描述抽象类和接口类的区别和联系)
         - [Python中如何动态获取和设置对象的属性？](#python中如何动态获取和设置对象的属性)
     - [内存管理与垃圾回收机制](#内存管理与垃圾回收机制)
         - [哪些操作会导致Python内存溢出，怎么处理？](#哪些操作会导致python内存溢出怎么处理)
-        - [关于Python内存管理,下列说法错误的是](#关于python内存管理下列说法错误的是)
-        - [Python的内存管理机制及调优手段？](#python的内存管理机制及调优手段)
+        - [Python的内存管理与垃圾回收机机制及调优手段？](#python的内存管理与垃圾回收机机制及调优手段)
         - [内存泄露是什么？如何避免？](#内存泄露是什么如何避免)
     - [函数](#函数)
-        - [python常见的列表推导式？](#python常见的列表推导式)
         - [简述read、readline、readlines的区别？](#简述readreadlinereadlines的区别)
         - [什么是Hash（散列函数）？](#什么是hash散列函数)
         - [python函数重载机制？](#python函数重载机制)
-        - [写一个函数找出一个整数数组中，第二大的数](#写一个函数找出一个整数数组中第二大的数-1)
         - [手写一个判断时间的装饰器](#手写一个判断时间的装饰器)
-        - [使用Python内置的filter()方法来过滤？](#使用python内置的filter方法来过滤)
         - [编写函数的4个原则](#编写函数的4个原则)
         - [函数调用参数的传递方式是值传递还是引用传递？](#函数调用参数的传递方式是值传递还是引用传递)
         - [如何在function里面设置一个全局变量](#如何在function里面设置一个全局变量)
-        - [对缺省参数的理解 ？](#对缺省参数的理解-)
-        - [Mysql怎么限制IP访问？](#mysql怎么限制ip访问)
+        - [对缺省参数的理解？](#对缺省参数的理解)
         - [带参数的装饰器?](#带参数的装饰器)
         - [为什么函数名字可以当做参数用?](#为什么函数名字可以当做参数用)
         - [Python中pass语句的作用是什么？](#python中pass语句的作用是什么)
-        - [有这样一段代码，print c会输出什么，为什么？](#有这样一段代码print-c会输出什么为什么)
-        - [交换两个变量的值？](#交换两个变量的值)
         - [map函数和reduce函数？](#map函数和reduce函数)
         - [回调函数，如何通信的?](#回调函数如何通信的)
         - [Python主要的内置数据类型都有哪些？ print dir( ‘a ’) 的输出？](#python主要的内置数据类型都有哪些-print-dir-a--的输出)
-        - [map(lambda x:xx，[y for y in range(3)])的输出？](#maplambda-xxxy-for-y-in-range3的输出)
-        - [hasattr() getattr() setattr() 函数使用详解？](#hasattr-getattr-setattr-函数使用详解)
+        - [hasattr()、getattr()、setattr()函数使用详解？](#hasattrgetattrsetattr函数使用详解)
         - [一句话解决阶乘函数？](#一句话解决阶乘函数)
-        - [什么是lambda函数？ 有什么好处？](#什么是lambda函数-有什么好处)
         - [递归函数停止的条件？](#递归函数停止的条件)
-        - [下面这段代码的输出结果将是什么？请解释。](#下面这段代码的输出结果将是什么请解释)
         - [什么是lambda函数？它有什么好处？写一个匿名函数求两个数的和](#什么是lambda函数它有什么好处写一个匿名函数求两个数的和)
     - [设计模式](#设计模式)
         - [对设计模式的理解，简述你了解的设计模式？](#对设计模式的理解简述你了解的设计模式)
-        - [请手写一个单例](#请手写一个单例)
+        - [请手写一个单例模式](#请手写一个单例模式)
         - [单例模式的应用场景有那些？](#单例模式的应用场景有那些)
-        - [用一行代码生成[1,4,9,16,25,36,49,64,81,100]](#用一行代码生成149162536496481100-1)
         - [对装饰器的理解，并写出一个计时器记录方法执行性能的装饰器？](#对装饰器的理解并写出一个计时器记录方法执行性能的装饰器)
         - [解释以下什么是闭包？](#解释以下什么是闭包)
         - [函数装饰器有什么作用？](#函数装饰器有什么作用)
         - [生成器，迭代器的区别？](#生成器迭代器的区别)
         - [X是什么类型?](#x是什么类型)
-        - [请用一行代码 实现将1-N 的整数列表以3为单位分组](#请用一行代码-实现将1-n-的整数列表以3为单位分组)
+        - [请用一行代码 实现将1-N的整数列表以3为单位分组](#请用一行代码-实现将1-n的整数列表以3为单位分组)
         - [Python中yield的用法?](#python中yield的用法)
     - [面向对象](#面向对象)
         - [Python中的可变对象和不可变对象？](#python中的可变对象和不可变对象)
@@ -225,6 +215,7 @@
         - [存储过程与触发器的区别](#存储过程与触发器的区别)
         - [悲观锁和乐观锁是什么？](#悲观锁和乐观锁是什么)
         - [你常用的mysql引擎有哪些?各引擎间有什么区别?](#你常用的mysql引擎有哪些各引擎间有什么区别)
+        - [Mysql怎么限制IP访问？](#mysql怎么限制ip访问)
     - [Redis](#redis)
         - [Redis宕机怎么解决?](#redis宕机怎么解决)
         - [redis和mecached的区别，以及使用场景](#redis和mecached的区别以及使用场景)
@@ -345,6 +336,10 @@ random.shuffle(alist)
 print(alist)
 ```
 ## 数据类型
+### python常见的列表推导式？
+```Python
+d = [val for value in iterable]
+```
 ### 现有字典 d= {'a':24,'g':52,'i':12,'k':33}请按value值进行排序?
 ```python
 sorted(d.items(), key=lambda x:x[1])
@@ -662,7 +657,7 @@ from functools import reduce
 num = sum([1,2,3,10248])
 print(num)
 #2.reduce 函数
-num1 = reduce(lambda x,y : x+y, [1,2,3,10248])
+num1 = reduce(lambda x, y : x + y, [1,2,3,10248])
 print(num1)
 ```
 ### Python中变量的作用域？（变量查找顺序)
@@ -738,7 +733,8 @@ nums = solution.twoSum(list,target)
 print(nums)
 ```
 
-### 给列表中的字典排序：假设有如下list对象，alist=[{"name":"a","age":20},{"name":"b","age":30},{"name":"c","age":25}],将alist中的元素按照age从大到小排序 alist=[{"name":"a","age":20},{"name":"b","age":30},{"name":"c","age":25}]
+### 给列表中的字典排序
+假设有如下list对象，alist=[{"name":"a","age":20},{"name":"b","age":30},{"name":"c","age":25}],将alist中的元素按照age从大到小排序 alist=[{"name":"a","age":20},{"name":"b","age":30},{"name":"c","age":25}]
 ```python
 alist_sort = sorted(alist, key=lambda e : e.__getitem__('age'), reverse=True)
 ```
@@ -893,7 +889,7 @@ if __name__ == '__main___':
 ### 阅读一下代码他们的输出结果是什么？
 ```python
 def multi():
-    return [lambda x : i*x for i in range(4)]
+    return [lambda x : i * x for i in range(4)]
 print([m(3) for m in multi()])
 ```
 正确答案是[9,9,9,9]，而不是[0,3,6,9]产生的原因是Python的闭包的后期绑定导致的，这意味着在闭包中的变量是在内部函数被调用的时候被查找的，因为，最后函数被调用的时候，for循环已经完成, i 的值最后是3,因此每一个返回值的i都是3,所以最后的结果是[9,9,9,9]
@@ -926,30 +922,30 @@ print("".join(map(lambda x: x[0] + str(x[1]), Counter("AAABBCCAC").most_common()
 # Python高级
 ## 元类
 ### Python中类方法、类实例方法、静态方法有何区别？
-类方法: 是类对象的方法，在定义时需要在上方使用 @classmethod 进行装饰,形参为cls，表示类对象，类对象和实例对象都可调用
+类方法: 是类对象的方法，在定义时需要在上方使用`@classmethod`进行装饰,形参为cls，表示类对象，类对象和实例对象都可调用
 
 类实例方法: 是类实例化对象的方法,只有实例对象可以调用，形参为self,指代对象本身;
 
-静态方法: 是一个任意函数，在其上方使用 @staticmethod 进行装饰，可以用对象直接调用，静态方法实际上跟该类没有太大关系
+静态方法: 是一个任意函数，在其上方使用`@staticmethod`进行装饰，可以用对象直接调用，静态方法实际上跟该类没有太大关系
 ### 遍历一个object的所有属性，并print每一个属性名？
 ```python
 class Car:
-    def __init__(self,name,loss): # loss [价格，油耗，公里数]
+    def __init__(self, name, loss): # loss [价格，油耗，公里数]
         self.name = name
         self.loss = loss
     
-    def getName(self):
+    def get_name(self):
         return self.name
     
-    def getPrice(self):
+    def get_price(self):
         # 获取汽车价格
         return self.loss[0]
     
-    def getLoss(self):
+    def get_loss(self):
         # 获取汽车损耗值
         return self.loss[1] * self.loss[2]
 
-Bmw = Car("宝马",[60,9,500]) # 实例化一个宝马车对象
+Bmw = Car("宝马", [60,9,500]) # 实例化一个宝马车对象
 print(getattr(Bmw,"name")) # 使用getattr()传入对象名字,属性值。
 print(dir(Bmw)) # 获Bmw所有的属性和方法
 ```
@@ -973,41 +969,121 @@ class Array:
     def __len__(self):
         return len(self.__list)
 
-    def Add(self,value):
+    def Add(self, value):
         self.__list.append(value)
     
-    def Remove(self,index):
+    def Remove(self, index):
         del self.__list[index]
     
     def DisplayItems(self):
         print "show all items---"
         for item in self.__list:
             print item
-    
-        
 ```
-### 介绍Cython，Pypy Cpython Numba各有什么缺点
-Cython
+### 介绍Cython、Pypy、CPython、Numba各有什么缺点
+python 程序性能优化的套路一般有两种：1）jit， 即just in time compiler， 即时编译器，在运行时将某些函数编译成二进程代码，使用这种方式的有：numba 和pypy；2）将python代码转换成c++/c代码，然后编译执行，这种方式有：cython和nuitka。总而言之，转换成c++/c代码以后编译成二进制文件执行的效率比用numba和pypy即时编译执行的效率要高
+
+1. Cython
+    Cython（Python的C语言扩展）是Python的超集，它能把Python代码编译成C代码，并与C和C++进行交互。它可以作为Python项目的扩展使用（重新性能要求高的部分），或者单独使用，不涉及传统的Python代码。缺点是你写的不是Python，所以需要手动迁移，缺乏可移植性。
+    
+    据说，Cython提供了一些特性来让代码更高效，比如变量类型化，这本质上是C要求的。一些科学计算的包，如scikit-learn依赖Cython的一些特性来保持操作简洁快速。
+
+2. Pypy
+    在CPython的替代品中，PyPy是最显眼的那一个（比如Quora就在生产环境中使用它）。它也最有机会成为默认解释器，它和现存Python代码高度兼容。
+
+    PyPy使用适时编译来加速Python，这项技术Google也在使用，Google在V8引擎中使用它加速Javascript。最近的版本PyPy2.5增加了一些提升性能的特性，其中有一项很受欢迎，它集成了Numpy，Numpy之前也一直被用来加速Python的运行。
+
+    使用Python3的代码需要对应地使用PyPy3。PyPy目前只支持到Python3.2.5，对Python3.3的支持正在进行中。
+
+3. CPython
+    CPython是特指C语言实现的Python，就是原汁原味的Python。
+    
+    之所以使用CPython这个词，是因为Python还有一些其它的实现，比如Jython，就是Java版的Python，还有烧脑的PyPy，使用Python再把Python实现了一遍。
+    
+    如下是官方对CPython的说明：
+    CPython is Guido van Rossum’s reference version of the Python computing language. It’s most often called simply “Python”; speakers say “CPython” generally to distinguish it explicitly from other implementations.
+    
+4. Numba
+    Numba接合了上面几个项目的想法。学习了Cython，Numba也采用了部分加速的策略，只加速CPU密集型的任务；同时它又学习了PyPy和Pyston，通过LLVM运行Python。你可以用一个装饰器指定你要用Numba编译的函数，Numba继承Numpy来加速函数的执行，Numba不做适时编译，它的代码是预先编译的。
+
+Python之父说大部分觉得Python慢的应用都是没有正确地使用Python。对于CPU密集型的任务有多种方法来提升性能--使用Numpy来做计算，调用外部C代码，以及尽量避免GIL锁。由于GIL锁目前还无法被替代，所以有很多项目开始尝试一些短期可行的替代方案，当然这些方案也可能转变为长期的可选项。
+
 ### 请描述抽象类和接口类的区别和联系
+使用`abc`模块可以很轻松的定义抽象基类：
+抽象类的一个特点是它不能直接被实例化
+抽象类的目的就是让别的类继承它并实现特定的抽象方法
+抽象基类的一个主要用途是在代码中检查某些类是否为特定类型，实现了特定接口
+除了继承这种方式外，还可以通过注册方式来让某个类实现抽象基类
+```python
+import abc
+```
+具体请看[此处](https://python3-cookbook.readthedocs.io/zh_CN/latest/c08/p12_define_interface_or_abstract_base_class.html)
+
 ### Python中如何动态获取和设置对象的属性？
+dir([obj]):调用这个方法将返回包含obj大多数属性名的列表（会有一些特殊的属性不包含在内）。obj的默认值是当前的模块对象。
+hasattr(obj, attr): 这个方法用于检查obj是否有一个名为attr的值的属性，返回一个布尔值。
+getattr(obj, attr): 调用这个方法将返回obj中名为attr值的属性的值，例如如果attr为’bar’，则返回obj.bar。
+setattr(obj, attr, val):调用这个方法将给obj的名为attr的值的属性赋值为val。例如如果attr为’bar’，则相当于obj.bar = val。
 
 ## 内存管理与垃圾回收机制
 ### 哪些操作会导致Python内存溢出，怎么处理？
-### 关于Python内存管理,下列说法错误的是
-### Python的内存管理机制及调优手段？
+1. 打开文件
+2. 读取影像数据
+及时释放或者关闭
+
+### Python的内存管理与垃圾回收机机制及调优手段？
+1. 内存管理机制：引用计数、垃圾回收、内存池。 
+
+    **引用计数：** 引用计数是一种非常高效的内存管理手段，当一个python对象被引用时，它的引用计数增加1，当它不再被一个变量引用时则引用计数减1，当它的引用计数等于0时对象被删除
+
+    **垃圾回收：** 当Python的某个对象的引用计数降为0时，说明没有任何引用指向该对象，该对象就成为要被回收的垃圾。比如某个新建对象，被分配给某个引用，对象的引用计数变为1。如果引用被删除，对象的引用计数为0，那么该对象就可以被垃圾回收。
+
+    **内存池：** Python 的内存机制呈现金字塔形状，-1，-2 层主要有操作系统进行操作；
+    * 第 0 层是 C 中的 malloc，free 等内存分配和释放函数进行操作；
+    * 第 1 层和第 2 层是内存池，有 Python 的接口函数 PyMem_Malloc 函数实现，当对象小于256K 时有该层直接分配内存；
+    * 第 3 层是最上层，也就是我们对 Python 对象的直接操作；
+
+    Python 在运行期间会大量地执行 malloc 和 free 的操作，频繁地在用户态和核心态之间进行切换，这将严重影响 Python 的执行效率。为了加速 Python 的执行效率，Python 引入了一个内存池机制，用于管理对小块内存的申请和释放。
+
+    Python 内部默认的小块内存与大块内存的分界点定在 256 个字节，当申请的内存小于 256 字节时，PyObject_Malloc 会在内存池中申请内存；当申请的内存大于 256 字节时，PyObject_Malloc 的行为将蜕化为 malloc 的行为。当然，通过修改 Python 源代码，我们可以改变这个默认值，从而改变 Python 的默认内存管理行为。
+
+2. 调优手段：
+    * 手动垃圾回收
+    * 调高垃圾回收阈值
+    * 避免循环引用(手动解循环引用和使用弱引用)
+
 ### 内存泄露是什么？如何避免？
+内存泄露指由于疏忽或错误造成程序未能释放已经不再使用内存的情况。内存泄露并非指内存在物理上的消失，而是应用程序分配某段内存后，由于设计错误，失去了对该段内存的控制，因而造成了内存的浪费，导致运行速度缓慢甚至系统崩溃等严重后果。
+
+有_del_()函数的对象间的循环引用是导致内存泄露的主凶。
+* 不使用一个对象式用del object来删除一个对象的引用计数就可以有效防止内存泄露问题。
+* 通过Python扩展模块gc来查看不能回收的对象的详细信息
+* 可以通过sys.getrefcount(obj)来获取对象的引用计数，并根据返回值是否为0来判断是否内存泄露
 
 ## 函数
-### python常见的列表推导式？
 ### 简述read、readline、readlines的区别？
+read()：一次性读取整个文件内容。推荐使用read(size)方法，size越大运行时间越长
+readline()：每次读取一行内容。内存不够时使用，一般不太用
+readlines()：一次性读取整个文件内容，并按行返回到list，方便我们遍历
+一般小文件我们都采用read()，不确定大小你就定个size，大文件就用readlines()
+
 ### 什么是Hash（散列函数）？
+哈希函数（Hash Function），也称为散列函数，给定一个输入x，它会算出相应的输出H(x)。哈希函数的主要特征是：
+* 输入x可以是任意长度的字符串
+* 输出结果即H(x)的长度是固定的
+* 计算H(x)的过程是高效的（对于长度为n的字符串x, 计算出H(x)的时间复杂度应为O(n)）
+
+1、免碰撞：即不会出现输入 x≠y ，但是H(x)=H(y) 的情况，其实这个特点在理论上并不成立，比如目前比特币使用的 SHA256 算法，会有 2^256 种输出，如果我们进行 2^256 + 1 次输入，那么必然会产生一次碰撞，事实上，通过 理论证明 ，通过 2^130 次输入就会有99%的可能性发生一次碰撞，不过即使如此，即便是人类制造的所有计算机自宇宙诞生开始一直运算到今天，发生一次碰撞的几率也是极其微小的。
+2、隐匿性：也就是说，对于一个给定的输出结果 H(x) ，想要逆推出输入 x ，在计算上是不可能的。如果想要得到 H(x) 的可能的原输入，不存在比穷举更好的方法。
+hash 算法的原理是试图将一个空间的数据集映射到另外一个空间（通常比原空间要小），并利用质数将数据集能够均匀的映射。目前主流的 hash 算法有：md4、md5、sha系列。
+
 ### python函数重载机制？
-### 写一个函数找出一个整数数组中，第二大的数
+通常不需要在Python中重载函数。Python是动态类型的，并支持函数的可选参数。
+
 ### 手写一个判断时间的装饰器
+函数可以作为参数传递的语言，可以使用装饰器
 ```python
 import datetime
-
-
 class TimeException(Exception):
     def __init__(self, exception_info):
         super().__init__()
@@ -1015,7 +1091,6 @@ class TimeException(Exception):
 
     def __str__(self):
         return self.info
-
 
 def timecheck(func):
     def wrapper(*args, **kwargs):
@@ -1026,7 +1101,6 @@ def timecheck(func):
 
     return wrapper
 
-
 @timecheck
 def test(name):
     print("Hello {}, 2019 Happy".format(name))
@@ -1035,61 +1109,116 @@ def test(name):
 if __name__ == "__main__":
     test("backbp")
 ```
-### 使用Python内置的filter()方法来过滤？
-```python
-list(filter(lambda x: x % 2 == 0, range(10)))
-```
 ### 编写函数的4个原则
+1. 函数设计要尽量短小，嵌套层次不宜过深。避免过长函数，嵌套最好能控制在3层之内。
+2. 函数申明应该合理，简单，易于使用。除函数名能够够正确反映其大体功能外，参数的设计也应该简洁明了，参数个数不宜太多。
+3. 函数参数设计应该考虑向下兼容。可以通过加入默认参数来避免退化。
+4. 一个函数只做一件事，就要尽量保证抽象层级的一致性，所有语句尽量在一个粒度上。若在一个函数中处理多件事，不利于代码的重用。
+Python中函数设计的好习惯还包括，不要在函数中定义可变对象作为默认值，使用异常替换返回错误，保证通过单元测试等。
+
 ### 函数调用参数的传递方式是值传递还是引用传递？
+Python中函数参数是引用传递（注意不是值传递）。对于不可变类型（数值型、字符串、元组），因变量不能修改，所以运算不会影响到变量自身；而对于可变类型（列表、字典）来说，函数体运算可能会更改传入的参数变量。
+
 ### 如何在function里面设置一个全局变量
-### 对缺省参数的理解 ？
-### Mysql怎么限制IP访问？
+函数内部global声明 修改全局变量
+
+### 对缺省参数的理解？
+缺省参数指在调用函数的时候没有传入参数的情况下，调用默认的参数，在调用函数的同时赋值时， 所传入的参数会替代默认参数。
+
+**args**是不定长参数，他可以表示输入参数是不确定的，可以是任意多个。
+
+**kwargs**是关键字参数，赋值的时候是以键 = 值的方式，参数是可以任意多对在定义函数的时候不确定会有多少参数会传入时，就可以使用两个参数。
+
 ### 带参数的装饰器?
+
 ### 为什么函数名字可以当做参数用?
+在实际使用中，我们有时希望将函数作为参数传递给另一个方法使用。
+比如装饰器实际就是函数调用函数
+
+如果要调用的方法的入参个数不确定，可以使用*args或**args。但是一定要把*args放到最后面
+
 ### Python中pass语句的作用是什么？
-### 有这样一段代码，print c会输出什么，为什么？
-### 交换两个变量的值？
+pass语句什么也不做，一般作为占位符或者创建占位程序，pass语句不会执行任何操作
+
 ### map函数和reduce函数？
+map()函数接收两个参数，一个是函数，一个是Iterable（可迭代对象），map将传入的函数依次作用到序列的每个元素，并把结果作为新的Iterator（迭代器）返回。 
+
+reduce把一个函数作用在一个序列上，这个函数必须接收两个参数，reduce把结果继续和序列的下一个元素做累积计算
+
 ### 回调函数，如何通信的?
+在计算机程序设计中，回调函数，或简称回调（Callback），是指通过函数参数传递到其它代码的，某一块可执行代码的引用。这一设计允许了底层代码调用在高层定义的子程序。
+
+有两种类型的回调函数：即blocking callbacks (also known as synchronous callbacks or just callbacks) and deferred callbacks (also known as asynchronous callbacks).
+
+那么，在python中如何实现回调函数呢，看代码
+```Python
+def my_callback(input):
+    print "function my_callback was called with %s input" % (input,)
+ 
+def caller(input, func):
+    func(input)
+ 
+for i in range(5):
+    caller(i, my_callback)
+```
+来自[https://www.cnblogs.com/berlin-sun/p/callbackinpython.html](https://www.cnblogs.com/berlin-sun/p/callbackinpython.html)
+
 ### Python主要的内置数据类型都有哪些？ print dir( ‘a ’) 的输出？
-### map(lambda x:xx，[y for y in range(3)])的输出？
-### hasattr() getattr() setattr() 函数使用详解？
+int 整型、bool 布尔、str 字符串、list 列表、tuple 元组、dict 字典、float 浮点型小数
+
+输出字符串‘a’的内建方法。
+
+### hasattr()、getattr()、setattr()函数使用详解？
+**hasattr(object, name)函数：** 判断一个对象里面是否有name 属性或者name 方法，返回bool 值，有name 属性(方法)返回True， 否则返回 False。
+**getattr(object, name[,default]) 函数：** 获取对象 object 的属性或者方法，如果存在则打印出来，如果不存在，打印默认值，默认值可选。注意：如果返回的是对象的方法，则打印结果是：方法的内存地址，如果需要运行这个方法，可以在后面添加括号()。
+
+**setattr(object,name,values)函数：** 给对象的属性赋值，若属性不存在，先创建再赋值
+
 ### 一句话解决阶乘函数？
-### 什么是lambda函数？ 有什么好处？
+```Python
+def factorial(num):
+    j = 1
+    for i in range(1, num + 1):
+        j = j * i
+    print(j)
+
+num = int(input("请输入阶乘数字："))
+factorial(num)
+```
 ### 递归函数停止的条件？
-### 下面这段代码的输出结果将是什么？请解释。
+递归的终止条件一般定义在递归函数内部，在递归调用前要做一个条件判断，根据判断的结果选择是继续调用自身，还是return;返回终止递归。
+**终止的条件：**
+* 判断递归的次数是否达到某一限定值
+* 判断运算的结果是否达到某个范围等，根据设计的目的来选择
+
 ### 什么是lambda函数？它有什么好处？写一个匿名函数求两个数的和
+lambda函数是一个可以接收任意多个参数(包括可选参数)并且返回单个表达式值的匿名函数
 
+**好处：**
+1. lambda 函数比较轻便，即用即删除，很适合需要完成一项功能，但是此功能只在此一处使用，连名字都很随意的情况下；
+2. 匿名函数，一般用来给filter、map这样的函数式编程服务;
+3. 作为回调函数，传递给某些应用，比如消息处理
 
-
+```python
+from functools import reduce
+reduce(lambda x, y : x + y, [2, 3])
+```
 
 ## 设计模式
 ### 对设计模式的理解，简述你了解的设计模式？
 设计模式是经过总结，优化的，对我们经常会碰到的一些编程问题的可重用解决方案。一个设计模式并不像一个类或一个库那样能够直接作用于我们的代码，反之，设计模式更为高级，它是一种必须在特定情形下实现的一种方法模板。
 常见的是工厂模式和单例模式
 
-### 请手写一个单例
-```python
-#python2
-class A(object):
-    __instance = None
-    def __new__(cls,*args,**kwargs):
-        if cls.__instance is None:
-            cls.__instance = objecet.__new__(cls)
-            return cls.__instance
-        else:
-            return cls.__instance
-```
+### 请手写一个单例模式
+[python如何实现单例模式?请写出两种实现方式?](#python如何实现单例模式请写出两种实现方式)
+
 ### 单例模式的应用场景有那些？
 单例模式应用的场景一般发现在以下条件下：
-资源共享的情况下，避免由于资源操作时导致的性能或损耗等，如日志文件，应用配置。
-控制资源的情况下，方便资源之间的互相通信。如线程池等，1,网站的计数器 2,应用配置 3.多线程池 4数据库配置 数据库连接池 5.应用程序的日志应用...
-### 用一行代码生成[1,4,9,16,25,36,49,64,81,100]
-```python
-print([x*x for x in range(1, 11)])
-```
+* 资源共享的情况下，避免由于资源操作时导致的性能或损耗等，如日志文件，应用配置。
+* 控制资源的情况下，方便资源之间的互相通信。如线程池等，1,网站的计数器 2,应用配置 3.多线程池 4数据库配置 数据库连接池 5.应用程序的日志应用...
+
 ### 对装饰器的理解，并写出一个计时器记录方法执行性能的装饰器？
-装饰器本质上是一个callable object ，它可以让其他函数在不需要做任何代码变动的前提下增加额外功能，装饰器的返回值也是一个函数对象。
+装饰器本质上是一个callable object，它可以让其他函数在不需要做任何代码变动的前提下增加额外功能，装饰器的返回值也是一个函数对象。
 
 ```python
 import time
@@ -1107,7 +1236,7 @@ def timeit(func):
     return wrapper
 @timeit
 def foo():
-    print('in foo()'foo())
+    print('in foo()' foo())
 ```
 ### 解释以下什么是闭包？
 在函数内部再定义一个函数，并且这个函数用到了外边函数的变量，那么将这个函数以及用到的一些变量称之为闭包。
@@ -1125,21 +1254,45 @@ def foo():
 区别： 生成器能做到迭代器能做的所有事，而且因为自动创建iter()和next()方法，生成器显得特别简洁，而且生成器也是高效的，使用生成器表达式取代列表解析可以同时节省内存。除了创建和保存程序状态的自动方法，当发生器终结时，还会自动抛出StopIteration异常。
 
 官方介绍：https://docs.python.org/3/tutorial/classes.html#iterators
+
 ### X是什么类型?
     X= (i for i in range(10))
     X是 generator类型
-### 请用一行代码 实现将1-N 的整数列表以3为单位分组
+
+### 请用一行代码 实现将1-N的整数列表以3为单位分组
 ```python
 N =100
-print ([[x for x in range(1,100)] [i:i+3] for i in range(0,100,3)])
+print([[x for x in range(1, 100)][i:i + 3] for i in range(0, 100, 3)])
 ```
 ### Python中yield的用法?
 yield就是保存当前程序执行状态。你用for循环的时候，每次取一个元素的时候就会计算一次。用yield的函数叫generator,和iterator一样，它的好处是不用一次计算所有元素，而是用一次算一次，可以节省很多空间，generator每次计算需要上一次计算结果，所以用yield,否则一return，上次计算结果就没了
+
 ## 面向对象
 ### Python中的可变对象和不可变对象？
+不可变对象：数值型、字符串、元组
+可变对象：列表、字典
+
 ### Python的魔法方法
+`__init__`:对象初始化方法
+`__new__`:创建对象时候执行的方法，单列模式会用到
+`__str__`:当使用print输出对象的时候，只要自己定义了__str__(self)方法，那么就会打印从在这个方法中return的数据
+`__del__`:删除对象执行的方法
+
 ### 面向对象中怎么实现只读属性?
+property装饰器把方法变成了类的属性
+```python
+class Demo1():
+    __name = "test"
+
+    @property
+    def name(self):
+        return self.__name
+```
+
 ### 谈谈你对面向对象的理解？
+面向对象是相对于面向过程而言的。面向过程语言是一种基于功能分析的、以算法为中心的程序设计方法；而面向对象是一种基于结构分析的、以数据为中心的程序设计思想。在面向对象语言中有一个有很重要东西，叫做类。
+
+面向对象有三大特性：**封装、继承、多态。** 
 
 ## 正则表达式
 ### 请写出一段代码用正则匹配出ip？
@@ -1858,6 +2011,7 @@ Session采用的是在服务器端保持状态的方案，而Cookie采用的是�
 ### 存储过程与触发器的区别
 ### 悲观锁和乐观锁是什么？
 ### 你常用的mysql引擎有哪些?各引擎间有什么区别?
+### Mysql怎么限制IP访问？
 
 ## Redis
 ### Redis宕机怎么解决?
